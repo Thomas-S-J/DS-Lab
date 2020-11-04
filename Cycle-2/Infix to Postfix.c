@@ -125,8 +125,8 @@ char* convert_to_postfix(char *infix_expression){
 
 		/*Basically every character we read from the infix expression is either
 		 * 1) a left parenthesis or,
-		 * 2) an operator or,
-		 * 3) a right parenthesis or,
+		 * 2) a right parenthesis or,
+		 * 3) an operator or,
 		 * 4) an operand.
 		 * Each individual case is dealt with below
 		 */
@@ -140,7 +140,7 @@ char* convert_to_postfix(char *infix_expression){
 			stack[TOP_STACK] = current_symbol;
 		} else if(current_symbol == ')') {
 		
-			/* Case 3: The incoming symbol is the right parenthesis.
+			/* Case 2: The incoming symbol is the right parenthesis.
 			 * This means we pop from the stack and add the poppped 
 			 * elements into the postfix string until we enounter the
 			 * left parenthesis in the stack. Then we also pop the left 
@@ -159,7 +159,7 @@ char* convert_to_postfix(char *infix_expression){
 			TOP_STACK--;
 		} else if(isOperator(current_symbol)) {
 			
-			/*Case 2: The character is an operator. This is kinda tricky.
+			/*Case 3: The character is an operator. This is kinda tricky.
 			 * We need to check if the incoming operator (ie the operator
 			 * we just read from the infix expression), has a higher precedence
 			 * than the operator that is already present in the top of the 
