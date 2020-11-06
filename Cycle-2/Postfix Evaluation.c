@@ -20,7 +20,7 @@ bool isOperator(char symbol){
 	return false;
 }
 
-char perform_operation(int operand1, int operand2, char operator){
+int perform_operation(int operand1, int operand2, char operator){
 
 	/*
 	 * TODO:Any better way of doing this? I wasn't getting
@@ -34,7 +34,7 @@ char perform_operation(int operand1, int operand2, char operator){
 		case '%':return operand2%operand1;
 		case '^':return operand2^operand1;
 	}
-	return '\0';
+	return 0;
 }
 
 int evaluate_postfix_expression(char *postfix_expression){
