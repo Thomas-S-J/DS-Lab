@@ -60,11 +60,11 @@ int insert_node_after_selected_node(int element){
 
 		/*
 		 * Is the linked list empty ?
-		 * Appaerntly not. So we traverse through the linked list and search for
+		 * Apparently not. So we traverse through the linked list and search for
 		 * the node containing the item after which we intend to insert our new node.
 		 * Once the node containing the element we want is found, there are two
 		 * memory operations to perform...first we set our new node's link to point to
-		 * the node that the node we just found out points to. Secondly, we change the
+		 * the link of the node that we just found out points to. Secondly, we change the
 		 * link field of the previous node to point to our node.
 		 */
 
@@ -100,7 +100,7 @@ int insert_node_at_rear(int element){
 		 * If not, then there actually exists a last node (or a rear node), behind
 		 * which, we must insert our node...
 		 * All we need to do is traverse through the linked list and once we find the
-		 * last node, we just inert our node behind it by updating the last node's
+		 * last node, we just insert our node behind it by updating the last node's
 		 * link field.
 		 */
 		struct node *node_ptr = FRONT;
