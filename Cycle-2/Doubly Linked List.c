@@ -81,13 +81,14 @@ int insert_node_after_selected_node(int element){
 		 */
 
 		struct node *node_ptr = FRONT;
-		while((node_ptr != NULL) && (node_ptr->data != search_element))
+		while((node_ptr->next_link != NULL) && (node_ptr->data != search_element))
 			node_ptr = node_ptr->next_link;
 
+		if(node_ptr->data != search_element) printf("Did not find element. Inserting node to end of the list.\n");
 		new_node->next_link = node_ptr->next_link;
 		node_ptr->next_link = new_node;
 		new_node->prev_link = node_ptr;
-		(new_node->next_link)->prev_link = new_node;
+		if((node_ptr->data == search_element) && (new_node->next_link != NULL))(new_node->next_link)->prev_link = new_node;
 	}
 	return 1;
 }
