@@ -66,7 +66,7 @@ int display_list(struct node **FRONT){
 		printf("%s: -\n", message);
 		while(node_ptr != NULL){
 		
-			printf("%dx^%d\t", node_ptr->coefficient, node_ptr->exponent);
+			printf("%+dx^%d\t", node_ptr->coefficient, node_ptr->exponent);
 			node_ptr = node_ptr->link;
 		}
 		printf("\n");
