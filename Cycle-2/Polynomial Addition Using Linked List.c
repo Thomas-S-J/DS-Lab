@@ -154,8 +154,32 @@ int add_polynomials(struct node **FRONT1, struct node **FRONT2, struct node **FR
 			node_ptr1 = node_ptr1->link;
 			node_ptr2 = node_ptr2->link;
 		}
-		
 	}
+ 	/* 
+	 * This piece of code handles the case where both the polynomials have different
+         * ending powers. For example, 
+         *      
+         *      2x + 1  && x  : are two polynomials whose least powers are same.
+         */
+        if(node_ptr1 || node_ptr2){
+
+                if(node_ptr2){
+
+                        while(node_ptr2 != NULL){
+
+                                insert_node_at_rear(FRONT_SUM, node_ptr2->coefficient, node_ptr2->exponent);
+                                node_ptr2 = node_ptr2->link;
+                        }
+                }
+                else if(node_ptr1){
+
+                        while(node_ptr1 != NULL){
+
+                                insert_node_at_rear(FRONT_SUM, node_ptr1->coefficient, node_ptr1->exponent);
+                                node_ptr1= node_ptr1->link;
+                        }
+                }
+        }
 
 	return 1;
 }
