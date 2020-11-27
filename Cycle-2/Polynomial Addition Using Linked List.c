@@ -159,7 +159,7 @@ int add_polynomials(struct node **FRONT1, struct node **FRONT2, struct node **FR
 	 * This piece of code handles the case where both the polynomials have different
          * ending powers. For example, 
          *      
-         *      2x + 1  && x  : are two polynomials whose least powers are same.
+         *      2x + 1  && x  : are two polynomials whose least powers are different.
          */
         if(node_ptr1 || node_ptr2){
 
