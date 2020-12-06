@@ -12,8 +12,9 @@ The general category of programs that are included in this lab are:-
 * Stacks
 * Queues (Also Circular and Double Ended Queue)
 * Infix to Postfix, Evaluating prefix
-* Linked Lists (Also Doubly and Circular LL)
+* Linked Lists (Also Doubly and Circular LL)  
+* Hashing
 
 ## License
 Too lazy to go through them right now...\
-Basically anyone is free to copy the code, but at your own risk... after all I'm just a guy doing this for fun.
+Basically anyone is free to copy the code, but at your own risk... after all I'm just doing this for fun.
