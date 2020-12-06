@@ -113,7 +113,7 @@ int search_element(){
 	 */
 
 	int flag = 0;
-	int index = hashcode(key);
+	int start_index = hashcode(key);
 
 	/*
 	 * The exact manner of searching for an element in the hash table
@@ -129,11 +129,17 @@ int search_element(){
 	 * on.
 	 */
 
-	while(hash_table[index] && hash_table[index] != -1){
+	if(hash_table[start_index] == key){
+		flag = 1;
+		printf("The element has been found at index %d.\n", start_index);
+	}
+	
+	int index = (start_index + 1)%TABLE_SIZE;
+	while(index != start_index && hash_table[index] != -1){
 		if(hash_table[index] == key){
 		
 			flag = 1;
-			printf("The element has been found at index %d\n", index);
+			printf("The element has been found at index %d.\n", index);
 			break;
 		}
 		index = (index+1)%TABLE_SIZE;
