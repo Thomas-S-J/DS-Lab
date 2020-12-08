@@ -40,7 +40,7 @@ void rehash(){
 	
 	/*
 	 * Rehashing all the elements in the old table to their new
-	 * positions in the newly alllocated table. We need to recalculate
+	 * positions in the newly allocated table. We need to recalculate
 	 * all the key-value pairs, and add the new values in the table. 
 	 */
 
@@ -128,28 +128,26 @@ int search_element(){
 	 * element is -1, it would imply that the array element has never been written
 	 * on.
 	 */
+	int current_index = start_index;
 
-	if(hash_table[start_index] == key){
-		flag = 1;
-		printf("The element has been found at index %d.\n", start_index);
-	}
-	
-	int index = (start_index + 1)%TABLE_SIZE;
-	while(index != start_index && hash_table[index] != -1){
-		if(hash_table[index] == key){
-		
-			flag = 1;
-			printf("The element has been found at index %d.\n", index);
-			break;
-		}
-		index = (index+1)%TABLE_SIZE;
-	}
-	if(flag == 0){
-	
-		printf("The element is not present in the hash table.\n");
-	}
+        do{
+                if(hash_table[current_index] == key){
+                        flag = 1;
+                        printf("The element has been found at index %d.\n", current_index);
+                        break;
+                }
+                current_index = (current_index+1) % TABLE_SIZE;
 
-	return 1;
+        }while(current_index != start_index && hash_table[current_index] != -1);
+
+        if(flag == 0){
+
+                printf("The element is not present in the hash table.\n");
+        }
+
+        return 1;
+
+
 }
 
 int delete_element(){
