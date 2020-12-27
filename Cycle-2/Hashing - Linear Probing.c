@@ -178,16 +178,18 @@ int delete_element(){
 	 */
 
         int flag = 0;
-        int index = hashcode(key);
+        int start_index = hashcode(key);
+        int index = start_index;
 
-        while(hash_table[index] && hash_table[index] != -1){
+        do{
                 if(hash_table[index] == key){
 
                         flag = 1;
                         break;
                 }
                 index = (index+1)%TABLE_SIZE;
-        }
+        }while(hash_table[index] != -1 && index != start_index);
+	
         if(flag == 1){
 
 		hash_table[index] = INT_MIN;
