@@ -1,1 +1,1 @@
-This folder contains the C programs for cycle-2, Semester -3.
+This folder contains the C programs for Data structures lab, 3rd semester
