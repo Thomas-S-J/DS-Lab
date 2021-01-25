@@ -145,7 +145,7 @@ int delete_node(){
 						newnode = newnode->left_child;
 					}
 					if(newnode == parent_newnode){
-						temp->right_child = NULL;
+						temp->right_child = (newnode->right_child == NULL)?NULL:newnode->right_child;
 					}
 					parent_newnode->left_child = NULL;
 					temp->data = newnode->data;
